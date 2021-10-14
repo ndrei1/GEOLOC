@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+<section id="section" class="section">
+    <div class="container">
+        <div class="nav">
+            <div class="first">
+                <h2>
+                    Address to coordinate
+                </h2>
+                <form th:action="@{/findCoordinates}" method="post">
+                    <p>
+                        Address:
+                        <input type="text" name="address" placeholder="Address"/>
+                    </p>
+                    <p class="example">
+                        Example: Belarus, Minsk, Odincova 43
+                    </p>
+                    <button> Submit</button>
+                </form>
+            </div>
+            <div class="second">
+                <h2>
+                    Coordinate to address
+                </h2>
+                <form th:action="@{/findAddress}" method="post">
+                    <p>
+                        Lat:
+                        <input name="lat" type=text placeholder="Lat">
+                    </p>
+                    <p>
+                        Lng:
+                        <input name="lng" type=text placeholder="Lng ">
+                    </p>
+                    <button> Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="flex ">
+            <div class="coordinate ">
+                <p th:text="'Coordinate is: ' + ${coordinates}"></p>
+            </div>
+            <div class="coordinate2 ">
+                <p th:text="'Address: ' + ${address}"></p>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
